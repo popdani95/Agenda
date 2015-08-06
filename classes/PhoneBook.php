@@ -62,7 +62,7 @@ class PhoneBook {
 		if($term !== null)
 		{
 			$term = str_replace(" ", "", $term);
-			$query = sprintf("%s WHERE CONCAT(first_name, last_name, number) LIKE '%%{$term}%%' OR CONCAT(last_name, first_name, number) LIKE '%%{$term}%%'", $query);
+			$query = sprintf("%s WHERE CONCAT(first_name, last_name, number) LIKE '%%{$term}%%' OR CONCAT(last_name, first_name, number) LIKE '%%{$term}%%' OR CONCAT(number, first_name, last_name) LIKE '%%{$term}%%'", $query);
 		}
 		$query = sprintf("%s ORDER BY first_name ASC", $query);
 		
